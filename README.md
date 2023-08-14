@@ -1,2 +1,2 @@
 # PODCODAR
-Minha caminhada junto ao PODCODAR tambem no GitHub.
+Minha caminhada junto ao PODCODAR.
