@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ex003.js"></script>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <label>
+        <input type="radio" name="gender" value="feminino"> Feminino
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="gender" value="masculino"> Masculino
+    </label>
+    <br>
+    <label for="peso">Digite seu pego em kg:</label>
+    <input type="number" id="peso">
+    <label for="altura">Digite sua altura em m:</label>
+    <input type="number" id="altura">
+    <button onclick="calcIMC((document.getElementById('gender')), parseFloat(document.getElementById('peso').value), parseFloat(document.getElementById('altura').value))">Calcular</button>
+
+    <h2>Resultados:</h2>
+    <p id="IMC"></p>
+    </body>
+</html>

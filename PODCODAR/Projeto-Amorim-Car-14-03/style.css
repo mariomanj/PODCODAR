@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Dodge3';
+    src: url('fonts/dodger3.ttf') format('truetype'), url('fonts/dodger33d.ttf') format('truetype'), url('fonts/dodger33dital.ttf') format('truetype'), url('fonts/dodger3cond.ttf') format('truetype'), url('fonts/dodger3condital.ttf') format('truetype'), url('fonts/dodger3expand.ttf') format('truetype'), url('fonts/dodger3expandital.ttf') format('truetype'), url('fonts/dodger3ital.ttf') format('truetype'), url('fonts/dodger3laser.ttf') format('truetype'), url('fonts/dodger3laserital.ttf') format('truetype'), url('fonts/dodger3left.ttf') format('truetype') ;
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+background-color: #1d513b;
+}
