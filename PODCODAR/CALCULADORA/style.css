@@ -16,7 +16,7 @@ body {
 #calc {
     width: 400px;
     padding: .5em;
-    background-color: rgb(81, 80, 128);
+    background-color: rgb(204, 204, 209);
     color: black;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ body {
 #calc h3 {
     font-size: 1.2em;
     font-weight: 300;
-    color: #ffffff;
+    color: #000000;
 
 }
 
@@ -41,9 +41,9 @@ body {
 }
 
 #current-operation {
-    min-height: 1.6em;
-    font-size: 2em;
-    font-weight: 700;
+    min-height: 2em;
+    font-size: 1.5em;
+    font-weight: 500;
     padding: 0.2em;
     overflow-wrap: break-word;
 }
@@ -64,4 +64,24 @@ body {
 
 #buttons-container .number{
     background-color: #a1a0a0;
+}
+
+#buttons-container button:hover {
+    background-color: #464545;
+    border-color: #999;
+}
+
+#buttons-container #equal-btn {
+    grid-column: span 2;
+    background-color: rgb(75, 200, 216);
+
+}
+
+#buttons-container #equal-btn:hover {
+    background-color: rgb(31, 86, 94);
+
+}
+
+#buttons-container #clear-btn {
+    grid-column: span 2;
 }

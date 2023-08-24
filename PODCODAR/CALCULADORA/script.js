@@ -1,29 +1,27 @@
-function calculadora(operador){
-    if (operador === "multiplicar"){
-        function numeros (numero1 , numero2){
-            let soma = '';
-            soma = numero1 * numero2;
-            return soma;
-        }
-    } else if (operador === "somar"){
-        function numeros (numero1 , numero2){
-            let soma = '';
-            soma = numero1 + numero2;
-            return soma;
-        }
-    }else if (operador === "subtrair"){
-        function numeros (numero1 , numero2){
-            let soma = '';
-            soma = numero1 - numero2;
-            return soma;
-        }
-    }else if (operador === "dividir"){
-        function numeros (numero1 , numero2){
-            let soma = '';
-            soma = numero1 / numero2;
-            return soma;
-        }
-    }
+function insert (num){
+    let numero = document.getElementById("current-operation").innerHTML;
+    document.getElementById("current-operation").innerHTML = numero + num
 
+
+}
+
+function limpar() {
+    document.getElementById("current-operation").innerHTML = '';
+}
+
+function back (){
+
+    let resultado = document.getElementById("current-operation").innerHTML;
+
+    document.getElementById("current-operation").innerHTML = resultado.substring(0, resultado.length -1)
+
+}
+
+function calcular () {
+    let resultado = document.getElementById("current-operation").innerHTML;
+
+    if (resultado){
+        document.getElementById("current-operation").innerHTML = eval(resultado);
+    }
 
 }
