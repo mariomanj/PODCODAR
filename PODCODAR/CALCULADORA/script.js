@@ -1,27 +1,89 @@
-function insert (num){
-    let numero = document.getElementById("current-operation").innerHTML;
-    document.getElementById("current-operation").innerHTML = numero + num
+let runningTotal = 0;
+let buffer = '0';
+let previousOperator;
 
+const screen = documento.querySelector('#current-operation');
 
+function buttonClick(value){
+    if(isNaN(value)){
+        handleSymbol(value);
+    } else{
+        handleNumber(value);
+    }
+    screen.innerText = buffer;
 }
 
-function limpar() {
-    document.getElementById("current-operation").innerHTML = '';
+function handleSymbol(symbol){
+    switch(symbol){
+        case 'C':
+            buffer = "0";
+            runningTotal = 0;
+            break
+        case "=":
+            if(previousOperator === null){
+                return
+            }
+            flushOperation(parseInt(buffer));
+            previousOperator = null;
+            buffer = runningTotal;
+            runningTotal = 0;
+        case 'DEL':
+            if(buffer.length === 1){
+                buffer = "0";
+
+            } else {
+                buffer = buffer.substring(0, buffer.length - 1)
+            }   
+            break;
+        case '+':
+        case '-':   
+        case '*':
+        case '/':
+            handleMath(symbol);
+            break            
+    }
 }
 
-function back (){
-
-    let resultado = document.getElementById("current-operation").innerHTML;
-
-    document.getElementById("current-operation").innerHTML = resultado.substring(0, resultado.length -1)
-
-}
-
-function calcular () {
-    let resultado = document.getElementById("current-operation").innerHTML;
-
-    if (resultado){
-        document.getElementById("current-operation").innerHTML = eval(resultado);
+function handleMath(symbol){
+    if(buffer === '0'){
+        return;
     }
 
+    const intBuffer = parseInt(buffer);
+
+    if(runningTotal === 0){
+        runningTotal = intBuffer;
+    } else {
+        flushOperation(intBuffer);
+    }
+    previousOperator = symbol;
+    buffer = '0';
 }
+
+function flushOperation(intBuffer){
+    if(previousOperator === '+'){
+        runningTotal += intBuffer;
+    } else if(previousOperator === '-'){
+        runningTotal -= intBuffer;
+    } else if(previousOperator === '*'){
+        runningTotal *= intBuffer;
+    } else if(previousOperator === '/'){
+        runningTotal /= intBuffer;
+    }
+}
+
+function handleNumber(numberString){
+    if(buffer === '0'){
+        buffer = numberString;
+    } else {
+        buffer += numberString;
+    }
+}
+
+function init(){
+    document.querySelector('.buttons-container').addEventListener('click', function(event){
+        buttonClick(event.target.innerText);
+    })
+}
+
+init();
