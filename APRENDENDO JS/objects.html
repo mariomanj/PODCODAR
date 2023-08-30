@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous" defer></script>
+    <title>Objects</title>
+</head>
+<body>
+     <script>
+        /*
+        const produtos = {
+            nome: 'meia',
+            preco: 1090
+        };
+        console.log(produtos);
+        console.log(produtos.nome);
+        console.log(produtos.preco);
+
+        produtos.nome = 'Meia de algodão';
+
+        console.log(produtos)
+
+        produtos.novoNome = true;
+        console.log(produtos);
+
+        delete produtos.novoNome;
+        console.log(produtos);
+        */
+        /*
+        const produto2 = {
+            nome: 'Camisa' ,
+            'tempo-entrega': '1 dia',
+            avaliacoes: {
+                estrelas: 4.5 ,
+                contagem: 85,
+            },
+            funcao: function funcao1(){
+                console.log('Funcao dentro de um objeto')
+            }
+        };
+        console.log(produto2);
+        console.log(produto2.nome);
+        console.log(produto2['nome']);
+        console.log(produto2['tempo-entrega']);
+
+        console.log(produto2.avaliacoes.contagem);
+        produto2.funcao();
+
+        console.log(typeof console.log);
+
+        console.log(JSON.stringify(produto2));
+
+        const jsonString = JSON.stringify(produto2);
+
+        console.log(JSON.parse(jsonString));
+        */
+        
+        console.log('ola'.length);
+        console.log('ola'.toUpperCase());
+
+        const object1 = {
+            message:'ola'
+        };
+
+        const object2 = object1;
+
+        object1.message = 'Bom trabalho';
+        console.log(object1);
+        console.log(object2);
+
+        const object3 ={
+            message:'Bom trabalho'
+        };
+        // Explicando que mesmo que os valores internos dos objetos sejam iguais os objetos se baseiam em referencias, ou seja ele esta guardado na memoria, ele nao copia diretamente todas as informações de dentro do objeto, por isso que o object 3 nao é igual ao 1 mesmo tendo as mesmas informaçoes, e o 2 é igual pois foi copiado na sua referencia.
+        console.log(object3 === object1);
+        console.log(object1 === object2);
+
+        const object4 ={
+            message:'Bom trabalho',
+            preco: 799
+        };
+        // const message = object4.message;
+        const { message, preco } = object4;
+
+        console.log(message);
+        console.log(preco);
+
+
+        const object5 ={
+           //message: message
+            message, 
+            //metodo: function function1(){
+            //    console.log('metodo');
+            //}
+            metodo(){
+                console.log('metodo');
+            }
+        };
+
+        console.log(object5);
+        object5.metodo();
+
+
+     </script>   
+</body>
+</html>
