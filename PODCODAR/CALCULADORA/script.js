@@ -2,7 +2,7 @@ let runningTotal = 0;
 let buffer = '0';
 let previousOperator;
 
-const screen = documento.querySelector('#current-operation');
+const screen = document.querySelector('#current-operation');
 
 function buttonClick(value){
     if(isNaN(value)){
@@ -18,21 +18,21 @@ function handleSymbol(symbol){
         case 'C':
             buffer = "0";
             runningTotal = 0;
-            break
-        case "=":
+            break;
+        case '=':
             if(previousOperator === null){
-                return
+                return;
             }
             flushOperation(parseInt(buffer));
             previousOperator = null;
-            buffer = runningTotal;
+            buffer = runningTotal.toString(); // Adicionei .toString() para garantir que seja uma string
             runningTotal = 0;
-        case 'DEL':
+            break;
+        case 'Del':
             if(buffer.length === 1){
                 buffer = "0";
-
             } else {
-                buffer = buffer.substring(0, buffer.length - 1)
+                buffer = buffer.substring(0, buffer.length - 1);
             }   
             break;
         case '+':
@@ -40,7 +40,7 @@ function handleSymbol(symbol){
         case '*':
         case '/':
             handleMath(symbol);
-            break            
+            break;            
     }
 }
 
@@ -81,7 +81,7 @@ function handleNumber(numberString){
 }
 
 function init(){
-    document.querySelector('.buttons-container').addEventListener('click', function(event){
+    document.querySelector('#buttons-container').addEventListener('click', function(event){
         buttonClick(event.target.innerText);
     })
 }
